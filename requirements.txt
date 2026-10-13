@@ -1,0 +1,9 @@
+mesa>=2.2
+pandas>=2.1
+matplotlib>=3.8
+networkx>=3.2
+pyswip>=0.2.11
+solara>=1.35,<1.63
+ipyvue>=1.9,<2
+ipyvuetify>=1.6.10,<2
+altair>=5.4
