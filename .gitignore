@@ -1,0 +1,18 @@
+.venv/
+venv/
+.idea/
+
+# Python caches and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Coverage and packaging artifacts
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
