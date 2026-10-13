@@ -4,8 +4,6 @@ This repository contains the simulation code for:
 
 > Konstantinos Rigos and Martijn R. K. Mes, **"Designing Institutions for Decentralized Logistics Collaboration: An Agent-Based Simulation Approach,"** submitted to the 2026 Winter Simulation Conference.
 
-The submitted paper is included as [WSC2026.pdf](WSC2026.pdf).
-
 The model studies how rules for coordinating logistics exchanges influence collaboration between autonomous carriers. Two carriers repeatedly encounter opportunities to exchange transportation jobs. They choose whether to take the other carrier's job, give away their own job, or refuse. The active institutional regime converts those joint actions into an outcome. The resulting success or failure changes payoffs and trust, which then affects later decisions.
 
 ```mermaid
@@ -202,21 +200,12 @@ Existing files in `outputs/` are example results. Running a command with the sam
 |-- institutions/          # one inspectable Prolog rule set per regime
 |-- ngames/                # vendored norms-games code and its MIT license
 |-- outputs/               # generated CSV files and figures
-|-- ARCHITECTURE.md        # deeper implementation walkthrough
 |-- requirements.txt       # Python dependencies
-`-- WSC2026.pdf            # submitted paper
 ```
-
-For a file-level account of the Python-Prolog integration, see [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## Third-party code and attribution
 
 The `ngames/` directory is derived from Nieves Montes Gómez's [`norms-games`](https://github.com/nmontesg/norms-games) project, which provides a computational implementation of the Institutional Analysis and Development framework and generates games from Action Situation Language descriptions. It is distributed under the MIT License; the upstream copyright and license notice is preserved in [ngames/LICENSE](ngames/LICENSE).
-
-If you use the institutional game-generation component in academic work, please also consult and cite the publications listed by the upstream project:
-
-- Montes, N., Osman, N., and Sierra, C. (2021). "Enabling Game-Theoretical Analysis of Social Rules." *Artificial Intelligence Research and Development*, 339, 90-99. <https://doi.org/10.3233/FAIA210120>
-- Montes, N., Osman, N., and Sierra, C. (2022). "A Computational Model of Ostrom's Institutional Analysis and Development Framework." *Artificial Intelligence*, 311, 103756. <https://doi.org/10.1016/j.artint.2022.103756>
 
 ## Modifying an institution
 
@@ -228,6 +217,3 @@ Each regime has `agents.pl`, `states.pl`, and `rules.pl` files under `institutio
 
 Numeric `institution_param(...)` declarations are loaded by `institutions.py`, so the Prolog rule file remains the central configuration for regime-specific experiments. A new regime also needs an entry in `REGIMES` and an `InstitutionSpec` in `institutions.py`.
 
-## Scope of the model
-
-This is a deliberately stylized research model. It contains two carriers, one abstract exchange opportunity per round, public payoff information, and a simple bounded-rational decision heuristic. Payoffs represent logistics value abstractly rather than being calculated from detailed vehicle routes. These choices keep the institutional and trust mechanisms inspectable and make it easier to extend the model with operational routing, alternative behavioural rules, or more agents.
