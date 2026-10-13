@@ -1,5 +1,7 @@
 # Designing Institutions for Decentralized Logistics Collaboration
 
+![dashboard](InteractiveDashboard.gif)
+
 This repository contains the simulation code for:
 
 > Konstantinos Rigos and Martijn R. K. Mes, **"Designing Institutions for Decentralized Logistics Collaboration: An Agent-Based Simulation Approach,"** submitted to the 2026 Winter Simulation Conference.
@@ -130,6 +132,7 @@ python run.py --mode batch --rounds 200 --replications 5 --seed 42 --plot
 
 The numerical experiment in the paper uses 200 rounds and 30 seeds for each regime. Run that configuration with:
 
+![results](outputs/multi_seed_all_regimes_combined_metrics.png)
 ```powershell
 python multi_seed_plot.py --institution all --rounds 200 --num-seeds 30 --base-seed 42
 ```
